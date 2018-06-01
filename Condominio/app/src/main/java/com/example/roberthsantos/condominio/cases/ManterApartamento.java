@@ -21,6 +21,8 @@ public class ManterApartamento extends ManterProprietario{
 
     public Apartamento cadastrarApartamento(EditText numeroAp, EditText qtdQuarto){
         Apartamento apartamento = new Apartamento();
+        apartamento.setNumeroDoAp(Integer.valueOf(numeroAp.getText().toString()));
+        apartamento.setQtdQuartos(Integer.valueOf(qtdQuarto.getText().toString()));
         int numero = Integer.valueOf(numeroAp.getText().toString());
         int qtdQuartos = Integer.valueOf(qtdQuarto.getText().toString());
         for(int i = 0; i < apartamentos.size(); i++){
