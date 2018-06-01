@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/add_apartamento"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".app.AddApartamentoActivity"
+    android:backgroundTint="#E8F5E9"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardElevation="10dp"
+    app:cardUseCompatPadding="true"
+    app:cardPreventCornerOverlap="false"
+    app:cardCornerRadius="4dp"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_marginTop="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_margin="10dp"
+            android:inputType="number"
+            android:maxLength="4"
+            android:background="@drawable/edit_text_mod"
+            android:id="@+id/numero_apt_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Numero do apartamento"/>
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:inputType="number"
+                android:id="@+id/quant_quartos_add"
+                android:layout_weight="1"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_mod"
+                android:hint="Quantidade de quartos"/>
+
+
+            <CheckBox
+                android:id="@+id/check_ocupado"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:text="Ocupado"
+                android:onClick="clickCheckOcupado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+        <EditText
+            android:inputType="textCapWords"
+            android:maxLength="30"
+            android:layout_marginTop="4dp"
+            android:id="@+id/nome_proprietario_add"
+            android:visibility="gone"
+            android:background="@drawable/edit_text_mod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Proprietario"/>
+
+
+        <LinearLayout
+            android:id="@+id/layout_telefone_add"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_mod"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:text="Telefone: "/>
+
+
+
+            <EditText
+                android:inputType="number"
+                android:maxLength="12"
+                android:layout_weight="1"
+                android:id="@+id/telefone_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="DDDXXXXXXXXX"/>
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_margin="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Concluir"
+            android:onClick="addApartamento"/>
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

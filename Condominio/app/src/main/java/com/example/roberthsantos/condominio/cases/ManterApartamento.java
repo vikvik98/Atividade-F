@@ -25,7 +25,7 @@ public class ManterApartamento {
     public void AssociarProprietario(int numeroAp, String nomeProprietario){
         Apartamento apartamento = new Apartamento();
         for(int i = 0; i < apartamentos.size(); i++){
-            if(apartamentos.get(i).getNumeroDoApp() == numeroAp){
+            if(apartamentos.get(i).getNumeroDoAp() == numeroAp){
                 apartamento = apartamentos.get(i);
             }
         }
