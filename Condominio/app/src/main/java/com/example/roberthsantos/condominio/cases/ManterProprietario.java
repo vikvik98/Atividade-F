@@ -1,6 +1,7 @@
 package com.example.roberthsantos.condominio.cases;
 
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.roberthsantos.condominio.model.Proprietario;
 

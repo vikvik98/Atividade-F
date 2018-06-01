@@ -65,6 +65,7 @@
 
     <EditText
         android:visibility="gone"
+        android:inputType="number"
         android:id="@+id/numero_apt_despesa"
         android:background="@drawable/edit_text_mod"
         android:layout_width="match_parent"
