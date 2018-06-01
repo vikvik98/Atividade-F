@@ -84,6 +84,15 @@ public class ManterApartamento extends ManterProprietario{
         return apartamentosProprietarios;
     }
 
+    public Apartamento verificarApartamento(int numeroAp){
+        for(int i = 0; i < apartamentos.size(); i++){
+            if(apartamentos.get(i).getNumeroDoAp() == numeroAp){
+                return apartamentos.get(i);
+            }
+        }
+        return null;
+    }
+
     @Override
     public List<Proprietario> getProprietarios() {
         return super.getProprietarios();
