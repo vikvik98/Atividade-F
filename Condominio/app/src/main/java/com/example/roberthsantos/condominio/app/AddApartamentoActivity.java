@@ -103,7 +103,7 @@ public class AddApartamentoActivity extends AppCompatActivity {
 
             if (validarOcupacao == true){
                 try {
-                    proprietario.getNome();
+                    proprietario.save();
                 }catch (NullPointerException e){
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
