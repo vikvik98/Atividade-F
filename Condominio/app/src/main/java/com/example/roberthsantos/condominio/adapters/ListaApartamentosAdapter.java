@@ -37,7 +37,7 @@ public class ListaApartamentosAdapter extends RecyclerView.Adapter<ListaApartame
         try {
             holder.tvPropietario.setText(apartamento.getProprietario().getNome());
         }catch (NullPointerException e){
-            holder.tvPropietario.setText("Apartamento vago.");
+            holder.tvPropietario.setText("Apartamento vazio.");
         }
         holder.tvNumeroApartamento.setText("" + apartamento.getNumeroDoAp());
 
