@@ -84,6 +84,21 @@ public class MainActivity extends AppCompatActivity {
          return true;
     }
 
+    @Override
+    protected void onResume() {
+
+        RecyclerView rvApartamentos = (RecyclerView) findViewById(R.id.rvApartamentos);
+
+        List<Apartamento> apartamentos = Apartamento.listAll(Apartamento.class);
+
+        ListaApartamentosAdapter adapter = new ListaApartamentosAdapter(this, apartamentos);
+        rvApartamentos.setAdapter(adapter);
+
+        rvApartamentos.setLayoutManager(new LinearLayoutManager(this));
+
+        super.onResume();
+    }
+
     private void reloadData(List<Apartamento> data) {
 
         final List<Apartamento> apartamentos = data;
