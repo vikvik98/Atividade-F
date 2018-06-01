@@ -25,4 +25,12 @@ public class Proprietario extends SugarRecord {
     public String getNome() {
         return nome;
     }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public List<Apartamento> getApartamentos() {
+        return apartamentos;
+    }
 }

@@ -12,11 +12,20 @@ public class ManterProprietario {
         this.proprietarios = new ArrayList<>();
     }
 
-    public void CadastrarProprietario(String nome, String telefone){
-        Proprietario proprietario = new Proprietario();
-        proprietario.setNome(nome);
-        proprietario.setTelefone(telefone);
-        proprietarios.add(proprietario);
+    public boolean CadastrarProprietario(String nome, String telefone){
+        for(int i = 0; i < proprietarios.size(); i++){
+            if(getProprietarios().get(i).getNome().equals(nome) && getProprietarios().get(i).getTelefone().equals(telefone)){
+                return false;
+            }else {
+                Proprietario proprietario = new Proprietario();
+                proprietario.setNome(nome);
+                proprietario.setTelefone(telefone);
+                proprietarios.add(proprietario);
+                return true;
+            }
+        }
+        return true;
+
     }
 
     public List<Proprietario> getProprietarios() {
