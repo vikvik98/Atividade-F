@@ -33,7 +33,6 @@
             android:layout_gravity="bottom|right"
             android:layout_margin="16dp"
             android:src="@drawable/ic_house"
-            android:backgroundTint="#E65100"
             android:clickable="true"
             app:layout_anchorGravity="bottom|right|end"
             android:onClick="novoApartamento"/>

@@ -9,27 +9,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ManterProprietario {
-    private List<Proprietario> proprietarios;
+    private List<Proprietario> proprietarios = Proprietario.listAll(Proprietario.class);
+    Proprietario proprietario = new Proprietario();
 
     public ManterProprietario() {
-        this.proprietarios = new ArrayList<>();
     }
 
-    public boolean cadastrarProprietario(EditText nomeProprietario, EditText telefoneProprietario){
-        String nome = nomeProprietario.getText().toString();
-        String telefone = telefoneProprietario.getText().toString();
+    public Proprietario cadastrarProprietario(String nomeProprietario, String telefoneProprietario){
+        String nome = nomeProprietario;
+        String telefone = telefoneProprietario;
+        proprietario.setNome(nomeProprietario);
+        proprietario.setTelefone(telefoneProprietario);
         for(int i = 0; i < proprietarios.size(); i++){
             if(getProprietarios().get(i).getNome().equals(nome) && getProprietarios().get(i).getTelefone().equals(telefone)){
-                return false;
+                break;
             }else {
-                Proprietario proprietario = new Proprietario();
+                //Proprietario proprietario = new Proprietario();
                 proprietario.setNome(nome);
                 proprietario.setTelefone(telefone);
-                proprietarios.add(proprietario);
-                return true;
+                //proprietarios.add(proprietario);
+                return proprietario;
             }
         }
-        return true;
+        return proprietario;
 
     }
 

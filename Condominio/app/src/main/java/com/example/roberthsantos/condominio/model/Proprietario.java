@@ -33,4 +33,9 @@ public class Proprietario extends SugarRecord {
     public List<Apartamento> getApartamentos() {
         return apartamentos;
     }
+
+    @Override
+    public String toString() {
+        return this.getNome() + " - " + this.getTelefone();
+    }
 }

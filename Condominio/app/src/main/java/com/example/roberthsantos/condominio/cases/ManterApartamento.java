@@ -1,6 +1,8 @@
 package com.example.roberthsantos.condominio.cases;
 
+import android.content.Context;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.roberthsantos.condominio.model.Apartamento;
 import com.example.roberthsantos.condominio.model.Proprietario;
@@ -10,28 +12,29 @@ import java.util.List;
 
 public class ManterApartamento extends ManterProprietario{
 
-    private List<Apartamento> apartamentos;
+    private List<Apartamento> apartamentos = Apartamento.listAll(Apartamento.class);
 
 
     public ManterApartamento() {
-        this.apartamentos = new ArrayList<>();
+
     }
 
-    public boolean cadastrarApartamento(EditText numeroAp, EditText qtdQuarto){
+    public Apartamento cadastrarApartamento(EditText numeroAp, EditText qtdQuarto){
         Apartamento apartamento = new Apartamento();
         int numero = Integer.valueOf(numeroAp.getText().toString());
         int qtdQuartos = Integer.valueOf(qtdQuarto.getText().toString());
         for(int i = 0; i < apartamentos.size(); i++){
             if(apartamentos.get(i).getNumeroDoAp() == numero){
-                return false;
+                //tem que ter um TOAST aqui
+                break;
             }else {
                 apartamento.setNumeroDoAp(numero);
                 apartamento.setQtdQuartos(qtdQuartos);
-                apartamentos.add(apartamento);
-                return true;
+                //apartamentos.add(apartamento);
+                return apartamento;
             }
         }
-        return true;
+        return apartamento;
     }
 
     public boolean associarProprietario(EditText numeroApt, EditText nomeProprietarios){
