@@ -8,7 +8,7 @@ public class Apartamento extends SugarRecord {
     private int qtdQuartos;
     private boolean ocupado;
     private Proprietario proprietario;
-    private EnumTipoOcupacao opDoEnum;
+
 
 
     public Apartamento() {
@@ -38,14 +38,6 @@ public class Apartamento extends SugarRecord {
 
     public void setOcupado(boolean ocupado) {
         this.ocupado = ocupado;
-    }
-
-    public EnumTipoOcupacao getOpDoEnum() {
-        return opDoEnum;
-    }
-
-    public void setOpDoEnum(EnumTipoOcupacao opDoEnum) {
-        this.opDoEnum = opDoEnum;
     }
 
     public Proprietario getProprietario() {
