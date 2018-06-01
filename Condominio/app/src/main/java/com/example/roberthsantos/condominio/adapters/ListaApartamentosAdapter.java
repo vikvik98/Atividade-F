@@ -34,7 +34,11 @@ public class ListaApartamentosAdapter extends RecyclerView.Adapter<ListaApartame
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         Apartamento apartamento = this.apartamentos.get(position);
-        holder.tvPropietario.setText(apartamento.getProprietario().getNome());
+        try {
+            holder.tvPropietario.setText(apartamento.getProprietario().getNome());
+        }catch (NullPointerException e){
+            holder.tvPropietario.setText("Apartamento vago.");
+        }
         holder.tvNumeroApartamento.setText("" + apartamento.getNumeroDoAp());
 
     }

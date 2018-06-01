@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Proprietario proprietario1 = new Proprietario();
+        /*Proprietario proprietario1 = new Proprietario();
 
         proprietario1.setNome("Ze");
         proprietario1.setTelefone("99999-9999");
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         apartamento1.setProprietario(proprietario1);
         apartamento1.setQtdQuartos(3);
         apartamento1.save();
+        */
 
 
         RecyclerView rvApartamentos = (RecyclerView) findViewById(R.id.rvApartamentos);
