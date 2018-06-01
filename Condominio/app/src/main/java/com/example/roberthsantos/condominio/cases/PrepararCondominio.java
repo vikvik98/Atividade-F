@@ -18,4 +18,8 @@ public class PrepararCondominio {
         }
         throw new IllegalAccessError();
     }
+
+    public void calcularCondominio(){
+
+    }
 }

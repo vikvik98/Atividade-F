@@ -63,7 +63,7 @@ public class ManterApartamento extends ManterProprietario{
                 return true;
             }
         }
-        return false;
+        throw new IllegalArgumentException();
     }
 
     public int verificarQuantidadeTotalDeQuartos(){
