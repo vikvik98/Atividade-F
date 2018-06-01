@@ -23,12 +23,15 @@ public class Apartamento extends SugarRecord {
         this.qtdQuartos = qtdQuartos;
     }
 
-
-    public int getNumeroDoApp() {
+    public int getNumeroDoAp() {
         return numeroDoAp;
     }
 
     public void setProprietario(Proprietario proprietario) {
         this.proprietario = proprietario;
+    }
+
+    public void setNumero(int numero) {
+        this.numeroDoAp = numero;
     }
 }
