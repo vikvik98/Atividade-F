@@ -1,5 +1,6 @@
 package com.example.roberthsantos.condominio.app;
 import com.example.roberthsantos.condominio.R;
+import com.example.roberthsantos.condominio.cases.ManterApartamento;
 import com.example.roberthsantos.condominio.cases.PrepararCondominio;
 import com.example.roberthsantos.condominio.model.Despesas;
 import com.example.roberthsantos.condominio.model.TipoDespesa;
@@ -62,6 +63,7 @@ public class AddDespesasActivity extends AppCompatActivity {
 
 
         try{
+            ManterApartamento manterApartamento = new ManterApartamento();
             PrepararCondominio preparo = new PrepararCondominio();
 
             preparo.verificaNomeDespesa(nomeDespesa.getText().toString());
@@ -71,10 +73,8 @@ public class AddDespesasActivity extends AppCompatActivity {
                 tipoDespesa.setValorRateado(true);
             }else{
                 tipoDespesa.setValorRateado(false);
-                //TODO: VINAO TA FAZEENDO O METODO
-               // if (verificarApartamentoExistente(Integer.parseInt(apartamentoDespesa.getText().toString()))){
-               //     Toast.makeText(this,"Apartamento inexistente!", Toast.LENGTH_SHORT).show();
-               // }
+
+                manterApartamento.verificarApartamentoExistente(Integer.parseInt(apartamentoDespesa.getText().toString()));
             }
 
             preparo.verificarMesDespesa(mesDespesa);
@@ -88,7 +88,7 @@ public class AddDespesasActivity extends AppCompatActivity {
             finish();
 
         }catch (IllegalArgumentException e){
-            Toast.makeText(this, "Digite um nome valido!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Valores invalidos!", Toast.LENGTH_SHORT).show();
         }catch (IllegalAccessError e){
             Toast.makeText(this, "Mês não aceitavel", Toast.LENGTH_SHORT).show();
         }
