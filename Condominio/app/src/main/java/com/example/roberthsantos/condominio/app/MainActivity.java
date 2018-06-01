@@ -12,7 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.roberthsantos.condominio.R;
+import com.example.roberthsantos.condominio.adapters.ListaApartamentosAdapter;
 import com.example.roberthsantos.condominio.model.Apartamento;
+import com.example.roberthsantos.condominio.model.Proprietario;
 
 import java.util.List;
 
@@ -31,6 +33,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Proprietario proprietario1 = new Proprietario();
+
+        proprietario1.setNome("Ze");
+        proprietario1.setTelefone("99999-9999");
+        proprietario1.save();
+
+        Apartamento apartamento1 = new Apartamento();
+
+        apartamento1.setNumeroDoAp(103);
+        apartamento1.setProprietario(proprietario1);
+        apartamento1.setQtdQuartos(3);
+        apartamento1.save();
+
+
+        RecyclerView rvApartamentos = (RecyclerView) findViewById(R.id.rvApartamentos);
+
+        List<Apartamento> apartamentos = Apartamento.listAll(Apartamento.class);
+
+        ListaApartamentosAdapter adapter = new ListaApartamentosAdapter(this, apartamentos);
+        rvApartamentos.setAdapter(adapter);
+
+        rvApartamentos.setLayoutManager(new LinearLayoutManager(this));
         setupViews();
 
     }
