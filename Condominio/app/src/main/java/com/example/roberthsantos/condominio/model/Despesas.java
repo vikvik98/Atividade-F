@@ -13,4 +13,36 @@ public class Despesas extends SugarRecord{
 
     public Despesas() {
     }
+
+    public String getMesAno() {
+        return mesAno;
+    }
+
+    public void setMesAno(String mesAno) {
+        this.mesAno = mesAno;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public List<ItemCondominio> getItemCondominios() {
+        return itemCondominios;
+    }
+
+    public void setItemCondominios(List<ItemCondominio> itemCondominios) {
+        this.itemCondominios = itemCondominios;
+    }
+
+    public TipoDespesa getTipoDespesa() {
+        return tipoDespesa;
+    }
+
+    public void setTipoDespesa(TipoDespesa tipoDespesa) {
+        this.tipoDespesa = tipoDespesa;
+    }
 }

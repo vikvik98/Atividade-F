@@ -31,7 +31,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".app.AddApartamentoActivity" />
-        <activity android:name=".app.AddDespesasActivity"></activity>
+        <activity android:name=".app.AddDespesasActivity" />
+        <activity android:name=".app.LancarDespesaActivity"></activity>
     </application>
 
 </manifest>

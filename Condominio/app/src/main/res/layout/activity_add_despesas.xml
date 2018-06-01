@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="70dp"
     android:layout_width="match_parent"
@@ -47,6 +46,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/add_mes_despesa"
+        android:background="@drawable/edit_text_mod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mês da despesa (mes/dia)"/>
+
+
+    <EditText
+        android:inputType="number"
+        android:id="@+id/add_valor_despesa"
+        android:background="@drawable/edit_text_mod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Valor"/>
+
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/numero_apt_despesa"
+        android:background="@drawable/edit_text_mod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Numero do apartamento"/>
 
     <Button
         android:layout_marginTop="10dp"
