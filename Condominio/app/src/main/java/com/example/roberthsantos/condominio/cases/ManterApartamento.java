@@ -74,6 +74,25 @@ public class ManterApartamento extends ManterProprietario{
         return quartos;
     }
 
+    public List<Apartamento> verificarApartamentosOcupados(){
+        List<Apartamento> apartamentosProprietarios = new ArrayList<>();
+        for(int i = 0; i < apartamentos.size(); i++){
+            if(apartamentos.get(i).getProprietario() != null){
+                apartamentosProprietarios.add(apartamentos.get(i));
+            }
+        }
+        return apartamentosProprietarios;
+    }
+
+    public Apartamento verificarApartamento(int numeroAp){
+        for(int i = 0; i < apartamentos.size(); i++){
+            if(apartamentos.get(i).getNumeroDoAp() == numeroAp){
+                return apartamentos.get(i);
+            }
+        }
+        return null;
+    }
+
     @Override
     public List<Proprietario> getProprietarios() {
         return super.getProprietarios();
