@@ -1,5 +1,7 @@
 package com.example.roberthsantos.condominio.cases;
 
+import android.widget.EditText;
+
 import com.example.roberthsantos.condominio.model.Apartamento;
 import com.example.roberthsantos.condominio.model.Proprietario;
 
@@ -14,8 +16,10 @@ public class ManterApartamento extends ManterProprietario{
         this.apartamentos = new ArrayList<>();
     }
 
-    public boolean CadastrarApartamento(int numero, int qtdQuartos){
+    public boolean cadastrarApartamento(EditText numeroAp, EditText qtdQuarto){
         Apartamento apartamento = new Apartamento();
+        int numero = Integer.valueOf(numeroAp.getText().toString());
+        int qtdQuartos = Integer.valueOf(qtdQuarto.getText().toString());
         for(int i = 0; i < apartamentos.size(); i++){
             if(apartamentos.get(i).getNumeroDoAp() == numero){
                 return false;
@@ -29,8 +33,10 @@ public class ManterApartamento extends ManterProprietario{
         return true;
     }
 
-    public boolean AssociarProprietario(int numeroAp, String nomeProprietario){
+    public boolean associarProprietario(EditText numeroApt, EditText nomeProprietarios){
         Apartamento apartamento = new Apartamento();
+        int numeroAp = Integer.valueOf(numeroApt.getText().toString());
+        int nomeProprietario = Integer.valueOf(nomeProprietarios.getText().toString());
         for(int i = 0; i < apartamentos.size(); i++){
             if(apartamentos.get(i).getNumeroDoAp() == numeroAp){
                 apartamento = apartamentos.get(i);

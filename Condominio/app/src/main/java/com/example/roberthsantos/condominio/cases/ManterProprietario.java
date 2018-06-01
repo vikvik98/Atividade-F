@@ -1,5 +1,7 @@
 package com.example.roberthsantos.condominio.cases;
 
+import android.widget.EditText;
+
 import com.example.roberthsantos.condominio.model.Proprietario;
 
 import java.util.ArrayList;
@@ -12,7 +14,9 @@ public class ManterProprietario {
         this.proprietarios = new ArrayList<>();
     }
 
-    public boolean CadastrarProprietario(String nome, String telefone){
+    public boolean cadastrarProprietario(EditText nomeProprietario, EditText telefoneProprietario){
+        String nome = nomeProprietario.getText().toString();
+        String telefone = telefoneProprietario.getText().toString();
         for(int i = 0; i < proprietarios.size(); i++){
             if(getProprietarios().get(i).getNome().equals(nome) && getProprietarios().get(i).getTelefone().equals(telefone)){
                 return false;
