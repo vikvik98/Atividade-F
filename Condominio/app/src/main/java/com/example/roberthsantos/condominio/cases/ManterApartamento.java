@@ -31,21 +31,27 @@ public class ManterApartamento extends ManterProprietario{
         return true;
     }
 
-    public void AssociarProprietario(int numeroAp, String nomeProprietario){
+    public boolean AssociarProprietario(int numeroAp, String nomeProprietario){
         Apartamento apartamento = new Apartamento();
         for(int i = 0; i < apartamentos.size(); i++){
             if(apartamentos.get(i).getNumeroDoAp() == numeroAp){
                 apartamento = apartamentos.get(i);
+            }else{
+                return false;
             }
         }
 
         for(int i = 0; i < getProprietarios().size(); i++){
             if(getProprietarios().get(i).getNome().equals(nomeProprietario)){
+                apartamento.setProprietario(getProprietarios().get(i));
                 getProprietarios().get(i).getApartamentos().add(apartamento);
+                return true;
+            }else {
+                return false;
             }
         }
 
-
+        return true;
     }
 
     @Override
