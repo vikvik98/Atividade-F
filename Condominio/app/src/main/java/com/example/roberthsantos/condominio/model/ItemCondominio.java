@@ -2,7 +2,7 @@ package com.example.roberthsantos.condominio.model;
 
 import com.orm.SugarRecord;
 
-public class ItemCondominio extends Condomio {
+public class ItemCondominio {
 
     private String referencia;
     private double valor;

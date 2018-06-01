@@ -12,6 +12,7 @@ public class ManterApartamento extends ManterProprietario{
 
     private List<Apartamento> apartamentos;
 
+
     public ManterApartamento() {
         this.apartamentos = new ArrayList<>();
     }
@@ -50,12 +51,27 @@ public class ManterApartamento extends ManterProprietario{
                 apartamento.setProprietario(getProprietarios().get(i));
                 getProprietarios().get(i).getApartamentos().add(apartamento);
                 return true;
-            }else {
-                return false;
             }
         }
 
-        return true;
+        return false;
+    }
+
+    public boolean verificarApartamentoExistente(int numeroDoAp){
+        for(int i = 0; i < apartamentos.size(); i++){
+            if(apartamentos.get(i).getNumeroDoAp() == numeroDoAp){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int verificarQuantidadeTotalDeQuartos(){
+        int quartos = 0;
+        for(int i = 0; i < apartamentos.size(); i++){
+            quartos += apartamentos.get(i).getQtdQuartos();
+        }
+        return quartos;
     }
 
     @Override
