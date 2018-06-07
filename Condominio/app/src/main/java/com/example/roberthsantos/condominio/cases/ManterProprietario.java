@@ -20,10 +20,8 @@ public class ManterProprietario {
             if(getProprietarios().get(i).getNome().equals(nome) && getProprietarios().get(i).getTelefone().equals(telefone)){
                 break;
             }else {
-                //Proprietario proprietario = new Proprietario();
                 proprietario.setNome(nome);
                 proprietario.setTelefone(telefone);
-                //proprietarios.add(proprietario);
                 return proprietario;
             }
         }

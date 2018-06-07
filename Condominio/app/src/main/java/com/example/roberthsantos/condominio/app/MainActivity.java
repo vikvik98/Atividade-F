@@ -22,30 +22,14 @@ public class MainActivity extends AppCompatActivity {
     private Apartamento apartamento;
     private CardView cardApartamento;
     private RecyclerView rvApartamentos;
-    //private ApartamentoAdapter adapter;
     private List<Apartamento> apartamentosList;
-    //private Box<Apartamento> apartamentoBox;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        /*Proprietario proprietario1 = new Proprietario();
-
-        proprietario1.setNome("Ze");
-        proprietario1.setTelefone("99999-9999");
-        proprietario1.save();
-
-        Apartamento apartamento1 = new Apartamento();
-
-        apartamento1.setNumeroDoAp(103);
-        apartamento1.setProprietario(proprietario1);
-        apartamento1.setQtdQuartos(3);
-        apartamento1.save();
-        */
-
 
         RecyclerView rvApartamentos = (RecyclerView) findViewById(R.id.rvApartamentos);
 
@@ -61,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViews() {
         cardApartamento = findViewById(R.id.card_apt);
-        //rvApartamentos = findViewById(R.id.rvApartamentos);
-
     }
 
     @Override
@@ -97,18 +79,6 @@ public class MainActivity extends AppCompatActivity {
 
         super.onResume();
     }
-
-    private void reloadData(List<Apartamento> data) {
-
-        final List<Apartamento> apartamentos = data;
-        //TODO: tem que fazer adapter com o SUGAR
-        //adapter = new ApartamentoAdapter(this, apartamentos, apartamentoBox);
-        //rvApartamentos.setAdapter(adapter);
-        rvApartamentos.setLayoutManager(new LinearLayoutManager(this));
-        rvApartamentos.setHasFixedSize(true);
-
-    }
-
 
     public void novoApartamento(View view) {
         startActivity(new Intent(this, AddApartamentoActivity.class));

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.roberthsantos.condominio.R;
 import com.example.roberthsantos.condominio.model.Apartamento;
@@ -36,6 +37,12 @@ public class ListaApartamentosAdapter extends RecyclerView.Adapter<ListaApartame
         Apartamento apartamento = this.apartamentos.get(position);
         holder.tvNumeroApartamento.setText("" + apartamento.getNumeroDoAp());
 
+        if (this.apartamentos.get(position).isOcupado()){
+
+            holder.tvPropietario.setText(this.apartamentos.get(position).getProprietario().getNome());
+        }else{
+            holder.tvPropietario.setText("Desocupado");
+        }
     }
 
     @Override
