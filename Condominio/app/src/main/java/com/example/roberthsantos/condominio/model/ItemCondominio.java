@@ -1,12 +1,10 @@
 package com.example.roberthsantos.condominio.model;
 
-import com.orm.SugarRecord;
-
 public class ItemCondominio {
 
     private String referencia;
     private double valor;
-    private Despesas despesas;
+    private Despesa despesa;
 
     public ItemCondominio() {
 

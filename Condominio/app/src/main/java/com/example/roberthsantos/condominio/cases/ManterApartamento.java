@@ -10,7 +10,7 @@ import com.example.roberthsantos.condominio.model.Proprietario;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ManterApartamento extends ManterProprietario{
+public class  ManterApartamento extends ManterProprietario{
 
     private List<Apartamento> apartamentos = Apartamento.listAll(Apartamento.class);
 
