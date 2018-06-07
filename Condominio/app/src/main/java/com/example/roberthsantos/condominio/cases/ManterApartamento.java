@@ -1,8 +1,6 @@
 package com.example.roberthsantos.condominio.cases;
 
-import android.content.Context;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.roberthsantos.condominio.model.Apartamento;
 import com.example.roberthsantos.condominio.model.Proprietario;
@@ -19,19 +17,19 @@ public class  ManterApartamento extends ManterProprietario{
 
     }
 
-    public Apartamento cadastrarApartamento(EditText numeroAp, EditText qtdQuarto){
+    public Apartamento cadastrarApartamento(int numeroAp, int qtdQuarto){
+
         Apartamento apartamento = new Apartamento();
-        apartamento.setNumeroDoAp(Integer.valueOf(numeroAp.getText().toString()));
-        apartamento.setQtdQuartos(Integer.valueOf(qtdQuarto.getText().toString()));
-        int numero = Integer.valueOf(numeroAp.getText().toString());
-        int qtdQuartos = Integer.valueOf(qtdQuarto.getText().toString());
+        apartamento.setNumeroDoAp(numeroAp);
+        apartamento.setQtdQuartos(qtdQuarto);
+
         for(int i = 0; i < apartamentos.size(); i++){
-            if(apartamentos.get(i).getNumeroDoAp() == numero){
+            if(apartamentos.get(i).getNumeroDoAp() == numeroAp){
                 //tem que ter um TOAST aqui
                 break;
             }else {
-                apartamento.setNumeroDoAp(numero);
-                apartamento.setQtdQuartos(qtdQuartos);
+                apartamento.setNumeroDoAp(numeroAp);
+                apartamento.setQtdQuartos(qtdQuarto);
                 //apartamentos.add(apartamento);
                 return apartamento;
             }

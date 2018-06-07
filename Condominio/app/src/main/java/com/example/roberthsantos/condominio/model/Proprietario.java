@@ -38,4 +38,6 @@ public class Proprietario extends SugarRecord {
     public String toString() {
         return this.getNome() + " - " + this.getTelefone();
     }
+
+
 }

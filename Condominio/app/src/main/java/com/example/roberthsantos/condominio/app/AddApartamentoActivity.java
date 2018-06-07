@@ -12,10 +12,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
 import com.example.roberthsantos.condominio.R;
-import com.example.roberthsantos.condominio.cases.CondominioUseCases;
 import com.example.roberthsantos.condominio.cases.ManterApartamento;
 import com.example.roberthsantos.condominio.cases.ManterProprietario;
+import com.example.roberthsantos.condominio.controllers.ApartamentoController;
 import com.example.roberthsantos.condominio.model.Apartamento;
 import com.example.roberthsantos.condominio.model.Proprietario;
 
@@ -39,8 +40,6 @@ public class AddApartamentoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_apartamento);
-
-        //apartamentoBox = ((App)getApplication()).getBoxStore().boxFor(Apartamento.class);
 
         setupViews();
 
@@ -97,8 +96,9 @@ public class AddApartamentoActivity extends AppCompatActivity {
 
         try{
 
-            apartamento = useCaseAddApartamento.cadastrarApartamento(editNumeroApt,editQuantQuartos);
-            //apartamento.save();
+            ApartamentoController controller = new ApartamentoController();
+            apartamento = controller.cadastrarApartamento(editNumeroApt,editQuantQuartos);
+            //apartamento = useCaseAddApartamento.cadastrarApartamento(editNumeroApt,editQuantQuartos);
 
 
             if (validarOcupacao == true){
@@ -120,11 +120,14 @@ public class AddApartamentoActivity extends AppCompatActivity {
 
                                     String nomeProprietario = edProprietario.getText().toString();
                                     String telefoneProprietario = edTelefone.getText().toString();
+
                                     ManterProprietario useCaseAddProprietario = new ManterProprietario();
 
                                     proprietario = useCaseAddProprietario.cadastrarProprietario(nomeProprietario,telefoneProprietario);
 
                                     proprietario.save();
+
+                                    apartamento.setOcupado(true);
                                     apartamento.setProprietario(proprietario);
                                     apartamento.save();
 
@@ -141,12 +144,7 @@ public class AddApartamentoActivity extends AppCompatActivity {
                 apartamento.save();
                 Toast.makeText(AddApartamentoActivity.this,"Salvo",Toast.LENGTH_LONG).show();
                 finish();
-                // proprietario.save();
             }
-
-            // useCaseAddApartamento.verificarApartamento(apartamentoBox,Integer.valueOf(editNumeroApt.getText().toString()));
-            //apartamentoBox.put(useCaseAddApartamento.adicionarApartamento(editNumeroApt,editQuantQuartos,editProprietario,editTelefone));
-            //finish();
         }catch (IllegalArgumentException e){
             Toast.makeText(this, "Numero de apartamento já existente", Toast.LENGTH_SHORT).show();
         }
@@ -168,8 +166,6 @@ public class AddApartamentoActivity extends AppCompatActivity {
                         EditText edTelefone = (EditText) viewDialog.findViewById(R.id.ed_cadastro_proprietario_telefone);
 
                         ManterProprietario useCaseAddProprietario = new ManterProprietario();
-
-                        //proprietario = useCaseAddProprietario.cadastrarProprietario(edProprietario,edTelefone);
 
                     }
                 })

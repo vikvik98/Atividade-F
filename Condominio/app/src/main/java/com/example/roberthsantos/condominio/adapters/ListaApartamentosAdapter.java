@@ -6,7 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.roberthsantos.condominio.R;
 import com.example.roberthsantos.condominio.model.Apartamento;
@@ -36,6 +38,15 @@ public class ListaApartamentosAdapter extends RecyclerView.Adapter<ListaApartame
         Apartamento apartamento = this.apartamentos.get(position);
         holder.tvNumeroApartamento.setText("" + apartamento.getNumeroDoAp());
 
+        if (this.apartamentos.get(position).isOcupado()){
+            holder.tvPropietario.setText(this.apartamentos.get(position).getProprietario().getNome());
+            holder.tvImageButton.setImageResource(R.drawable.ic_out);
+        }else{
+            holder.tvPropietario.setText("Desocupado");
+            holder.tvImageButton.setImageResource(R.drawable.ic_buy);
+        }
+
+
     }
 
     @Override
@@ -46,12 +57,14 @@ public class ListaApartamentosAdapter extends RecyclerView.Adapter<ListaApartame
     public static class ViewHolder extends RecyclerView.ViewHolder{
         protected TextView tvPropietario;
         protected TextView tvNumeroApartamento;
+        protected ImageButton tvImageButton;
 
         public ViewHolder(View itemView){
             super(itemView);
 
-            tvPropietario = (TextView) itemView.findViewById(R.id.nome_proprietario);
-            tvNumeroApartamento = (TextView) itemView.findViewById(R.id.numero_apt);
+            tvPropietario = itemView.findViewById(R.id.nome_proprietario);
+            tvNumeroApartamento = itemView.findViewById(R.id.numero_apt);
+            tvImageButton = itemView.findViewById(R.id.img_card);
         }
     }
     public ListaApartamentosAdapter(Context context, List<Apartamento> apartamentos){
