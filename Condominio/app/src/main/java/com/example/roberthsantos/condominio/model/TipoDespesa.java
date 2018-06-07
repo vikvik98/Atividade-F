@@ -8,7 +8,7 @@ public class TipoDespesa extends SugarRecord {
 
     private String nome;
     private boolean valorRateado;
-    private List<Despesas> despesas;
+    private List<Despesa> despesas;
 
     public String getNome() {
         return nome;

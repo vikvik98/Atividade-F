@@ -2,7 +2,7 @@ package com.example.roberthsantos.condominio.app;
 import com.example.roberthsantos.condominio.R;
 import com.example.roberthsantos.condominio.cases.ManterApartamento;
 import com.example.roberthsantos.condominio.cases.PrepararCondominio;
-import com.example.roberthsantos.condominio.model.Despesas;
+import com.example.roberthsantos.condominio.model.Despesa;
 import com.example.roberthsantos.condominio.model.TipoDespesa;
 
 import android.support.v7.app.AppCompatActivity;
@@ -79,10 +79,10 @@ public class AddDespesasActivity extends AppCompatActivity {
 
             preparo.verificarMesDespesa(mesDespesa);
 
-            Despesas despesas = new Despesas();
-            despesas.setMesAno(mesDespesa.getText().toString());
-            despesas.setTipoDespesa(tipoDespesa);
-            despesas.setValor(Integer.parseInt(valorDespesa.getText().toString()));
+            Despesa despesa = new Despesa();
+            despesa.setMesAno(mesDespesa.getText().toString());
+            despesa.setTipoDespesa(tipoDespesa);
+            despesa.setValor(Integer.parseInt(valorDespesa.getText().toString()));
 
             Toast.makeText(this, "Despesa cadastrada com sucesso!", Toast.LENGTH_SHORT).show();
             finish();
