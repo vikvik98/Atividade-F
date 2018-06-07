@@ -1,16 +1,17 @@
 package com.example.roberthsantos.condominio.app;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
 import com.example.roberthsantos.condominio.R;
 import com.example.roberthsantos.condominio.cases.ManterApartamento;
 import com.example.roberthsantos.condominio.cases.PrepararCondominio;
 import com.example.roberthsantos.condominio.model.Despesa;
 import com.example.roberthsantos.condominio.model.TipoDespesa;
-
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 
 public class AddDespesasActivity extends AppCompatActivity {
 

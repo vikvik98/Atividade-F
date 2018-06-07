@@ -2,8 +2,6 @@ package com.example.roberthsantos.condominio.cases;
 
 import android.widget.EditText;
 
-import java.util.IllegalFormatException;
-
 public class PrepararCondominio {
 
     public void verificaNomeDespesa(String nome){

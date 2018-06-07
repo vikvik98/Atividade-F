@@ -4,7 +4,7 @@ import com.orm.SugarRecord;
 
 import java.util.Date;
 
-public class Condomio extends SugarRecord{
+public class Condominio extends SugarRecord{
 
     private String mesAno;
     private Date dataPagamento;
@@ -12,7 +12,7 @@ public class Condomio extends SugarRecord{
     private double valorAPagar;
     private Apartamento apartamento;
 
-    public Condomio() {
+    public Condominio() {
 
     }
 }

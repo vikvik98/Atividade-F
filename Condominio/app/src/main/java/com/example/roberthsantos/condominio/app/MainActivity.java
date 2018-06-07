@@ -1,8 +1,8 @@
 package com.example.roberthsantos.condominio.app;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,7 +14,6 @@ import android.view.View;
 import com.example.roberthsantos.condominio.R;
 import com.example.roberthsantos.condominio.adapters.ListaApartamentosAdapter;
 import com.example.roberthsantos.condominio.model.Apartamento;
-import com.example.roberthsantos.condominio.model.Proprietario;
 
 import java.util.List;
 

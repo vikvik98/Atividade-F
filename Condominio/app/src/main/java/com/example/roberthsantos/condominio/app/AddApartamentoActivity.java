@@ -12,8 +12,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
 import com.example.roberthsantos.condominio.R;
-import com.example.roberthsantos.condominio.cases.CondominioUseCases;
 import com.example.roberthsantos.condominio.cases.ManterApartamento;
 import com.example.roberthsantos.condominio.cases.ManterProprietario;
 import com.example.roberthsantos.condominio.model.Apartamento;
